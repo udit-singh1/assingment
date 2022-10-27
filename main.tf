@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.web.id]
   tags                        = var.tags_ec2
-  user_data                   = file("/home/aakash/extratasks/buddy/script.sh")
+  user_data                   = file("/var/lib/jenkins/workspace/terra/script.sh")
 }
 
 resource "aws_ami_from_instance" "web-ami" {
